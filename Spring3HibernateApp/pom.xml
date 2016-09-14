@@ -18,11 +18,11 @@
      <name>central</name>
      <url>http://192.168.0.109:8081/artifactory/ext-release-local</url>
    </repository>
-<!---	<snapshotRepository>
+<!--	<snapshotRepository>
           <id>snapshots</id>
           <name>libs-snapshot-local</name>
           <url>http://192.168.0.109:8081/artifactory/ext-snapshot-local</url>
-        </snapshotRepository>--->
+        </snapshotRepository>-->
 	
  </distributionManagement>
 	<reporting>
