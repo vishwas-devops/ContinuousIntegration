@@ -6,6 +6,7 @@ run-mysql:
 
 build-run-mysql:
 	make build-mysql
+	sleep 2
 	make run-mysql
 
 build-tomcat:
@@ -15,8 +16,23 @@ run-tomcat:
 	sudo docker run -it -d -P --name tomcat --link mysql:mysql  opstree/tomcat
 build-run-tomcat:
 	make build-tomcat
+	sleep 1
 	make run-tomcat
+
+
+build-nginx:
+	sudo docker build -t opstree/nginx --file `pwd`/Dockerfile.nginx `pwd`
+run-nginx:
+	sudo docker run -it -d -P --name nginx --link tomcat:tomcat  opstree/nginx
+build-run-nginx:
+	make build-nginx
+	sleep 1
+	make run-nginx
+
 
 build-run:
 	make build-run-mysql
+	sleep 10
 	make build-run-tomcat
+	sleep 5
+	make build-run-nginx
