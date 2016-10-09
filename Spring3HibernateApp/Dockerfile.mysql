@@ -1,0 +1,5 @@
+From mysql
+
+ENV MYSQL_ROOT_PASSWORD='password'
+ENV MYSQL_DATABASE='employeedb'
+Expose 3306
