@@ -1,5 +1,5 @@
 build-app-war:
-	docker run -it --rm --name my-maven-project -v "$PWD":/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-7 mvn clean package
+	docker run -it --rm --name my-maven-project -v `PWD`:/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-7 mvn clean package
 
 build-mysql:
 	docker build -t opstree/mysql --file `pwd`/Dockerfile.mysql `pwd`
