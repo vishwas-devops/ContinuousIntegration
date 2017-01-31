@@ -5,7 +5,7 @@ build-mysql:
 	docker build -t opstree/mysql --file `pwd`/Dockerfile.mysql `pwd`
 
 run-mysql:
-	docker run -it -d -P --name mysql  opstree/mysql
+	docker run -it --rm --name mysql  opstree/mysql
 
 build-run-mysql:
 	make build-mysql
@@ -13,10 +13,11 @@ build-run-mysql:
 	make run-mysql
 
 build-tomcat:
+	make build-app-war
 	docker build -t opstree/tomcat --file `pwd`/Dockerfile.tomcat `pwd`
 
 run-tomcat:
-	docker run -it -d -P --name tomcat --link mysql:mysql  opstree/tomcat
+	docker run -it --rm -P --name tomcat --link mysql:mysql  opstree/tomcat
 
 build-run-tomcat:
 	make build-tomcat
