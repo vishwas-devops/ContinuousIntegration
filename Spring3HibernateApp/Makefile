@@ -1,8 +1,11 @@
+build-app-war:
+	docker run -it --rm --name my-maven-project -v "$PWD":/usr/src/mymaven -w /usr/src/mymaven maven:3.2-jdk-7 mvn clean package
+
 build-mysql:
-	sudo docker build -t opstree/mysql --file `pwd`/Dockerfile.mysql `pwd`
+	docker build -t opstree/mysql --file `pwd`/Dockerfile.mysql `pwd`
+
 run-mysql:
-	# sudo docker rm -vf mysql
-	sudo docker run -it -d -P --name mysql  opstree/mysql
+	docker run -it -d -P --name mysql  opstree/mysql
 
 build-run-mysql:
 	make build-mysql
@@ -10,10 +13,11 @@ build-run-mysql:
 	make run-mysql
 
 build-tomcat:
-	sudo docker build -t opstree/tomcat --file `pwd`/Dockerfile.tomcat `pwd`
+	docker build -t opstree/tomcat --file `pwd`/Dockerfile.tomcat `pwd`
+
 run-tomcat:
-	# sudo docker rm -vf mysql
-	sudo docker run -it -d -P --name tomcat --link mysql:mysql  opstree/tomcat
+	docker run -it -d -P --name tomcat --link mysql:mysql  opstree/tomcat
+
 build-run-tomcat:
 	make build-tomcat
 	sleep 1
@@ -24,6 +28,7 @@ build-nginx:
 	sudo docker build -t opstree/nginx --file `pwd`/Dockerfile.nginx `pwd`
 run-nginx:
 	sudo docker run -it -d -P --name nginx --link tomcat:tomcat  opstree/nginx
+
 build-run-nginx:
 	make build-nginx
 	sleep 1
