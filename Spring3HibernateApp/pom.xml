@@ -15,12 +15,12 @@
    <!-- use the following if you're not using a snapshot version. -->
    <repository>
      <id>nexusAuth</id>
-     <url>http://localhost:8081/content/repositories/releases/</url>
+     <url>http://192.168.33.10:8081/nexus/content/repositories/releases/</url>
    </repository>
-	<snapshotRepository>
-          <id>nexusAuth</id>
-          <url>http://localhost:8081/content/repositories/releases/</url>
-        </snapshotRepository>
+   <snapshotRepository>
+      <id>nexusAuth</id>
+      <url>http://192.168.33.10:8081/nexus/content/repositories/snapshots/</url>
+  </snapshotRepository>
 	
  </distributionManagement>
 	<reporting>
@@ -165,7 +165,7 @@
 			</plugin>
 		</plugins>
 	</build>
-	<version>1.24</version>
+	<version>1.25</version>
 	<name>Spring3HibernateApp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
