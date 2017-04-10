@@ -17,10 +17,6 @@
      <id>nexusAuth</id>
      <url>http://192.168.33.10:8081/nexus/content/repositories/releases/</url>
    </repository>
-   <snapshotRepository>
-      <id>nexusAuth</id>
-      <url>http://192.168.33.10:8081/nexus/content/repositories/snapshots/</url>
-  </snapshotRepository>
 	
  </distributionManagement>
 	<reporting>
@@ -129,7 +125,7 @@
                   		<pullMaster>true</pullMaster> 
                   		<allowSnapshots>true</allowSnapshots>                 
 		  		<flowInitContext>
-                     		<masterBranchName>master-OrclCiCdPOC</masterBranchName>
+                     		<masterBranchName>dev-OrclCiCdPOC</masterBranchName>
                      		<developBranchName>dev-OrclCiCdPOC</developBranchName>
                   		</flowInitContext>
                			</configuration>
