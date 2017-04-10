@@ -125,7 +125,7 @@
                   		<pullMaster>true</pullMaster> 
                   		<allowSnapshots>true</allowSnapshots>                 
 		  		<flowInitContext>
-                     		<masterBranchName>dev-OrclCiCdPOC</masterBranchName>
+			        <!-- <masterBranchName>dev-OrclCiCdPOC</masterBranchName>-->
                      		<developBranchName>dev-OrclCiCdPOC</developBranchName>
                   		</flowInitContext>
                			</configuration>
