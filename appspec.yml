@@ -2,14 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /var/lib/jenkins/jenkins_slave/workspace/codedeploy/Spring3HibernateApp/target/Spring3HibernateApp.war
-    destination: /opt/tomcat/apache-tomcat-8.5.32/webapps
+    destination: /opt/tomcat/apache-tomcat-8.5.32/webapps/
 hooks:
   BeforeInstall:
 
-    - location: scripts/start_server
+    - location: /scripts/start_server
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/stop_server
+    - location: /scripts/stop_server
       timeout: 300
       runas: root
