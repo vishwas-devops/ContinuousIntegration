@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /Spring3HibernateApp.war
+  - source: /var/lib/jenkins/jenkins_slave/workspace/codedeploy/Spring3HibernateApp/target/Spring3HibernateApp.war
     destination: /opt/tomcat/apache-tomcat-8.5.32/webapps
 hooks:
   BeforeInstall:
